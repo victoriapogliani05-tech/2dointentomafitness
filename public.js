@@ -1,5 +1,5 @@
-﻿// ============================================================
-// supabase-config.js â€” Supabase client initialization
+// ============================================================
+// supabase-config.js — Supabase client initialization
 // ============================================================
 
 const SUPABASE_URL = 'https://xblsoprouwrdjfdjixia.supabase.co';
@@ -23,21 +23,21 @@ try {
     console.error('Error initializing Supabase client:', err.message);
 }
 // ============================================================
-// data.js â€” Shared data layer for M.A. Fitness Gym Management
+// data.js — Shared data layer for M.A. Fitness Gym Management
 // Uses Supabase to persist data in the cloud.
 // ============================================================
 
-// â”€â”€ Plan Definitions â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Plan Definitions ──────────────────────────────────────────
 const PLANS = {
     estandar: {
         id: 'estandar',
-        name: 'EstÃ¡ndar',
+        name: 'Estándar',
         options: [
-            { days: 2, fee: 32000, label: '2 dÃ­as â€” $32.000' },
-            { days: 3, fee: 36000, label: '3 dÃ­as â€” $36.000' },
-            { days: 4, fee: 40000, label: '4 dÃ­as â€” $40.000' },
-            { days: 5, fee: 45000, label: '5 dÃ­as â€” $45.000' },
-            { days: 'libre', fee: 48000, label: 'Pase Libre â€” $48.000' },
+            { days: 2, fee: 32000, label: '2 días — $32.000' },
+            { days: 3, fee: 36000, label: '3 días — $36.000' },
+            { days: 4, fee: 40000, label: '4 días — $40.000' },
+            { days: 5, fee: 45000, label: '5 días — $45.000' },
+            { days: 'libre', fee: 48000, label: 'Pase Libre — $48.000' },
         ]
     },
     personalizado: {
@@ -52,19 +52,19 @@ const PLANS = {
     }
 };
 
-// â”€â”€ Routines Library â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Routines Library ──────────────────────────────────────────
 const ROUTINES_LIBRARY = [
     {
         id: 'r1',
         name: 'Hipertrofia Tren Superior',
         level: 'Intermedio',
-        days: 'Lunes / MiÃ©rcoles / Viernes',
+        days: 'Lunes / Miércoles / Viernes',
         exercises: [
             { name: 'Press de banca plano', sets: 4, reps: '10-12' },
             { name: 'Remo con barra', sets: 4, reps: '10-12' },
             { name: 'Press militar', sets: 3, reps: '10' },
-            { name: 'Curl de bÃ­ceps', sets: 3, reps: '12' },
-            { name: 'TrÃ­ceps en polea', sets: 3, reps: '12' },
+            { name: 'Curl de bíceps', sets: 3, reps: '12' },
+            { name: 'Tríceps en polea', sets: 3, reps: '12' },
             { name: 'Elevaciones laterales', sets: 3, reps: '15' },
         ]
     },
@@ -72,35 +72,35 @@ const ROUTINES_LIBRARY = [
         id: 'r2',
         name: 'Hipertrofia Tren Inferior',
         level: 'Intermedio',
-        days: 'Martes / Jueves / SÃ¡bado',
+        days: 'Martes / Jueves / Sábado',
         exercises: [
             { name: 'Sentadilla con barra', sets: 4, reps: '8-10' },
             { name: 'Prensa de piernas', sets: 4, reps: '12' },
             { name: 'Peso muerto rumano', sets: 3, reps: '10' },
-            { name: 'ExtensiÃ³n de cuÃ¡driceps', sets: 3, reps: '12' },
+            { name: 'Extensión de cuádriceps', sets: 3, reps: '12' },
             { name: 'Curl femoral', sets: 3, reps: '12' },
-            { name: 'ElevaciÃ³n de gemelos', sets: 4, reps: '15' },
+            { name: 'Elevación de gemelos', sets: 4, reps: '15' },
         ]
     },
     {
         id: 'r3',
         name: 'Full Body Principiante',
         level: 'Principiante',
-        days: 'Lunes / MiÃ©rcoles / Viernes',
+        days: 'Lunes / Miércoles / Viernes',
         exercises: [
             { name: 'Sentadilla goblet', sets: 3, reps: '12' },
             { name: 'Press de pecho con mancuernas', sets: 3, reps: '12' },
             { name: 'Remo con mancuerna', sets: 3, reps: '12' },
             { name: 'Zancadas', sets: 3, reps: '10 c/lado' },
             { name: 'Plancha abdominal', sets: 3, reps: '30s' },
-            { name: 'ElongaciÃ³n general', sets: 1, reps: '10 min' },
+            { name: 'Elongación general', sets: 1, reps: '10 min' },
         ]
     },
     {
         id: 'r4',
         name: 'Quema de Grasa HIIT',
         level: 'Avanzado',
-        days: 'Martes / Jueves / SÃ¡bado',
+        days: 'Martes / Jueves / Sábado',
         exercises: [
             { name: 'Burpees', sets: 4, reps: '15' },
             { name: 'Mountain climbers', sets: 4, reps: '20' },
@@ -118,17 +118,17 @@ const ROUTINES_LIBRARY = [
         exercises: [
             { name: 'TRX rows', sets: 3, reps: '12' },
             { name: 'Thrusters', sets: 3, reps: '10' },
-            { name: 'Planchas dinÃ¡micas', sets: 3, reps: '12' },
-            { name: 'Salto al cajÃ³n', sets: 3, reps: '10' },
+            { name: 'Planchas dinámicas', sets: 3, reps: '12' },
+            { name: 'Salto al cajón', sets: 3, reps: '10' },
             { name: 'Wall balls', sets: 3, reps: '15' },
             { name: 'Farmer walk', sets: 3, reps: '30m' },
         ]
     },
     {
         id: 'r6',
-        name: 'Fuerza MÃ¡xima',
+        name: 'Fuerza Máxima',
         level: 'Avanzado',
-        days: 'Lunes / MiÃ©rcoles / Viernes',
+        days: 'Lunes / Miércoles / Viernes',
         exercises: [
             { name: 'Sentadilla trasera', sets: 5, reps: '5' },
             { name: 'Press de banca', sets: 5, reps: '5' },
@@ -140,7 +140,7 @@ const ROUTINES_LIBRARY = [
     },
 ];
 
-// â”€â”€ Field Mapping: JS camelCase â†” DB snake_case â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Field Mapping: JS camelCase ↔ DB snake_case ───────────────
 function memberToDb(member) {
     const dbRow = {};
     if (member.name !== undefined) dbRow.name = member.name;
@@ -152,6 +152,7 @@ function memberToDb(member) {
     if (member.paidMonth !== undefined) dbRow.paid_month = member.paidMonth;
     if (member.routine !== undefined) dbRow.routine = member.routine;
     if (member.registeredAt !== undefined) dbRow.registered_at = member.registeredAt;
+    if (member.pathologies !== undefined) dbRow.pathologies = member.pathologies;
     return dbRow;
 }
 
@@ -167,10 +168,11 @@ function dbToMember(row) {
         paidMonth: row.paid_month,
         routine: row.routine,
         registeredAt: row.registered_at,
+        pathologies: row.pathologies,
     };
 }
 
-// â”€â”€ Supabase Data Helpers (async) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Supabase Data Helpers (async) ─────────────────────────────
 async function loadMembers() {
     const { data, error } = await window.supabaseApp
         .from('members')
@@ -260,9 +262,9 @@ async function togglePayment(memberId) {
     await updateMember(member);
 }
 
-// â”€â”€ Formatting Helpers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Formatting Helpers ────────────────────────────────────────
 function formatDate(dateString) {
-    if (!dateString) return 'â€”';
+    if (!dateString) return '—';
     const options = { day: '2-digit', month: 'short', year: 'numeric' };
     return new Date(dateString + 'T12:00:00').toLocaleDateString('es-AR', options);
 }
@@ -272,7 +274,7 @@ function formatCurrency(amount) {
     return '$' + amount.toLocaleString('es-AR');
 }
 
-// â”€â”€ Payment / Month Helpers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Payment / Month Helpers ───────────────────────────────────
 function getCurrentMonth() {
     const now = new Date();
     return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
@@ -307,7 +309,7 @@ function getPlanDisplayName(member) {
     if (!plan) return member.plan;
     let label = plan.name;
     if (member.plan === 'estandar' && member.daysPerWeek) {
-        label += member.daysPerWeek === 'libre' ? ' (Pase Libre)' : ` (${member.daysPerWeek} dÃ­as)`;
+        label += member.daysPerWeek === 'libre' ? ' (Pase Libre)' : ` (${member.daysPerWeek} días)`;
     }
     return label;
 }
@@ -321,7 +323,7 @@ function getFeeDisplay(member) {
     return formatCurrency(member.fee);
 }
 // ============================================================
-// public.js â€” Public page logic for M.A. Fitness (Supabase)
+// public.js — Public page logic for M.A. Fitness (Supabase)
 // Handles DNI lookup, registration, profile editing, and panel
 // ============================================================
 
@@ -368,13 +370,13 @@ function bindPublicEvents() {
     document.getElementById('dni-input').addEventListener('keypress', e => { if (e.key === 'Enter') handleLogin(); });
     document.getElementById('btn-logout').addEventListener('click', handleLogout);
 
-    // "Registrate acÃ¡" link
+    // "Registrate acá" link
     document.getElementById('link-register').addEventListener('click', e => {
         e.preventDefault();
         showRegistrationForm();
     });
 
-    // Registration: plan selector â€” show days for ALL plans
+    // Registration: plan selector — show days for ALL plans
     document.querySelectorAll('.plan-option').forEach(btn => {
         btn.addEventListener('click', () => {
             document.querySelectorAll('.plan-option').forEach(b => b.classList.remove('active'));
@@ -411,7 +413,7 @@ function bindPublicEvents() {
     document.getElementById('btn-save-profile').addEventListener('click', saveProfile);
 }
 
-// â”€â”€ Login Flow â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Login Flow ────────────────────────────────────────────────
 async function handleLogin() {
     console.log('[public.js] handleLogin triggered');
     const dniInput = document.getElementById('dni-input');
@@ -420,13 +422,13 @@ async function handleLogin() {
     console.log('[public.js] DNI:', dni);
 
     if (!dni || dni.length < 7) {
-        showError(errorEl, 'IngresÃ¡ un DNI vÃ¡lido (7-8 dÃ­gitos).');
+        showError(errorEl, 'Ingresá un DNI válido (7-8 dígitos).');
         return;
     }
 
     try {
         if (!window.supabaseApp) {
-            throw new Error('La base de datos (Supabase) no se cargÃ³ correctamente. RevisÃ¡ tu conexiÃ³n.');
+            throw new Error('La base de datos (Supabase) no se cargó correctamente. Revisá tu conexión.');
         }
 
         const member = await getMemberByDni(dni);
@@ -434,7 +436,7 @@ async function handleLogin() {
             errorEl.textContent = '';
             showMemberPanel(member);
         } else {
-            showError(errorEl, 'DNI no encontrado. Si sos nuevo, hacÃ© clic en "Registrate acÃ¡".');
+            showError(errorEl, 'DNI no encontrado. Si sos nuevo, hacé clic en "Registrate acá".');
         }
     } catch (err) {
         console.error('[public.js] Error in handleLogin:', err);
@@ -454,7 +456,7 @@ function showLoginBox() {
     document.getElementById('login-box').style.display = 'block';
 }
 
-// â”€â”€ Registration Flow â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Registration Flow ─────────────────────────────────────────
 function showRegistrationForm() {
     hideAll();
     document.getElementById('register-box').style.display = 'block';
@@ -478,24 +480,25 @@ async function handleRegister() {
     const dni = document.getElementById('reg-dni').value.trim();
     const name = document.getElementById('reg-name').value.trim();
     const phone = document.getElementById('reg-phone').value.trim();
+    const pathologies = document.getElementById('reg-pathology').value.trim();
 
     // Validation
-    if (!dni || dni.length < 7) { showError(errorEl, 'IngresÃ¡ un DNI vÃ¡lido (7-8 dÃ­gitos).'); return; }
-    if (!name) { showError(errorEl, 'IngresÃ¡ tu nombre completo.'); return; }
-    if (!phone) { showError(errorEl, 'IngresÃ¡ tu nÃºmero de telÃ©fono.'); return; }
-    if (!selectedPlan) { showError(errorEl, 'SeleccionÃ¡ un plan.'); return; }
-    if (!selectedDays) { showError(errorEl, 'SeleccionÃ¡ la cantidad de dÃ­as.'); return; }
+    if (!dni || dni.length < 7) { showError(errorEl, 'Ingresá un DNI válido (7-8 dígitos).'); return; }
+    if (!name) { showError(errorEl, 'Ingresá tu nombre completo.'); return; }
+    if (!phone) { showError(errorEl, 'Ingresá tu número de teléfono.'); return; }
+    if (!selectedPlan) { showError(errorEl, 'Seleccioná un plan.'); return; }
+    if (!selectedDays) { showError(errorEl, 'Seleccioná la cantidad de días.'); return; }
 
     registrationDni = dni;
 
     // Check DNI not already registered
     const existing = await getMemberByDni(registrationDni);
     if (existing) {
-        showError(errorEl, 'Este DNI ya estÃ¡ registrado. VolvÃ© al inicio e ingresÃ¡ tu DNI para acceder.');
+        showError(errorEl, 'Este DNI ya está registrado. Volvé al inicio e ingresá tu DNI para acceder.');
         return;
     }
 
-    // Resolve fee: only EstÃ¡ndar has auto-fee based on days
+    // Resolve fee: only Estándar has auto-fee based on days
     let fee = 0;
     if (selectedPlan === 'estandar') {
         const opt = PLANS.estandar.options.find(o => String(o.days) === String(selectedDays));
@@ -514,6 +517,7 @@ async function handleRegister() {
         paidMonth: null,
         routine: null,
         registeredAt: today.toISOString(),
+        pathologies: pathologies || null,
     };
 
     await addMember(newMember);
@@ -524,7 +528,7 @@ async function handleRegister() {
     document.getElementById('register-success').style.display = 'block';
 }
 
-// â”€â”€ Member Panel â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Member Panel ──────────────────────────────────────────────
 function showMemberPanel(member) {
     hideAll();
     const panel = document.getElementById('member-panel');
@@ -549,40 +553,54 @@ function showMemberPanel(member) {
     const statusIcon = document.getElementById('panel-status-icon');
     statusIcon.className = `panel-card-icon ${paid ? 'success' : 'danger'}`;
 
-    // Routine â€” display as read-only table with 6 days Ã— 4 sub-columns
+    // Routine — display dynamic table
     const routineContainer = document.getElementById('panel-routine');
     const hasRoutine = member.routine && Array.isArray(member.routine) &&
         member.routine.some(row => row.some(day => day.ejercicio || day.series || day.rep || day.peso));
 
     if (hasRoutine) {
+        // Find active days
+        const activeDays = [];
+        for (let d = 0; d < 6; d++) {
+            const hasData = member.routine.some(row => row[d] && (row[d].ejercicio || row[d].series || row[d].rep || row[d].peso));
+            if (hasData) activeDays.push(d);
+        }
+
         let theadHtml = '<tr class="routine-day-header">';
-        for (let d = 0; d < 6; d++) {
-            theadHtml += `<th colspan="4">DÃ­a ${d + 1}</th>`;
-        }
+        activeDays.forEach(d => {
+            theadHtml += `<th colspan="4">Día ${d + 1}</th>`;
+        });
         theadHtml += '</tr><tr class="routine-sub-header">';
-        for (let d = 0; d < 6; d++) {
+        activeDays.forEach(d => {
             theadHtml += '<th>Ejercicio</th><th>Series</th><th>Rep</th><th>Peso</th>';
-        }
+        });
         theadHtml += '</tr>';
 
         let tbodyHtml = '';
-        member.routine.forEach(row => {
-            const hasContent = row.some(day => day.ejercicio || day.series || day.rep || day.peso);
-            if (!hasContent) return;
+        member.routine.forEach((row, rowIndex) => {
+            // Check if this row has content in ANY of the active days
+            const hasContentInRow = activeDays.some(d => row[d] && (row[d].ejercicio || row[d].series || row[d].rep || row[d].peso));
+            if (!hasContentInRow) return;
+
             tbodyHtml += '<tr>';
-            row.forEach(day => {
-                tbodyHtml += `<td>${day.ejercicio || 'â€”'}</td>`;
-                tbodyHtml += `<td class="rt-center">${day.series || 'â€”'}</td>`;
-                tbodyHtml += `<td class="rt-center">${day.rep || 'â€”'}</td>`;
-                tbodyHtml += `<td class="rt-center">${day.peso || 'â€”'}</td>`;
+            activeDays.forEach(d => {
+                const day = row[d] || {};
+                tbodyHtml += `<td>${day.ejercicio || '—'}</td>`;
+                tbodyHtml += `<td class="rt-center">${day.series || '—'}</td>`;
+                tbodyHtml += `<td class="rt-center">${day.rep || '—'}</td>`;
+                
+                // For peso, make it an editable input
+                const currentPeso = day.peso || '';
+                tbodyHtml += `<td class="rt-center"><input type="text" class="peso-edit-input" data-row="${rowIndex}" data-day="${d}" value="${currentPeso}" placeholder="-"></td>`;
             });
             tbodyHtml += '</tr>';
         });
 
         routineContainer.innerHTML = `
             <div class="routine-detail-card">
-                <div class="routine-detail-header">
+                <div class="routine-detail-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
                     <h3><i class="fas fa-dumbbell"></i> Tu Rutina</h3>
+                    <button class="btn-primary btn-sm" id="btn-save-weights"><i class="fas fa-save"></i> Guardar Pesos</button>
                 </div>
                 <div class="routine-table-scroll">
                     <table class="routine-display-table">
@@ -590,17 +608,53 @@ function showMemberPanel(member) {
                         <tbody>${tbodyHtml}</tbody>
                     </table>
                 </div>
+                <p id="weights-msg" style="text-align:right; margin-top:10px; font-size:0.9rem; font-weight:600;"></p>
             </div>`;
+            
+        // Bind the save weights button
+        document.getElementById('btn-save-weights').addEventListener('click', async () => {
+            const msgEl = document.getElementById('weights-msg');
+            msgEl.textContent = 'Guardando...';
+            msgEl.style.color = '#fff';
+            
+            const inputs = document.querySelectorAll('.peso-edit-input');
+            let hasChanges = false;
+            
+            inputs.forEach(input => {
+                const r = parseInt(input.dataset.row);
+                const d = parseInt(input.dataset.day);
+                const newVal = input.value.trim();
+                
+                // Ensure the day object exists if they are adding a weight to an empty cell
+                if (!member.routine[r][d]) member.routine[r][d] = {};
+                
+                if (member.routine[r][d].peso !== newVal) {
+                    member.routine[r][d].peso = newVal;
+                    hasChanges = true;
+                }
+            });
+            
+            if (hasChanges) {
+                await updateMember(member);
+                msgEl.textContent = '¡Pesos guardados con éxito!';
+                msgEl.style.color = 'var(--accent-primary)';
+                setTimeout(() => msgEl.textContent = '', 3000);
+            } else {
+                msgEl.textContent = 'No hay cambios para guardar.';
+                msgEl.style.color = '#aaa';
+                setTimeout(() => msgEl.textContent = '', 3000);
+            }
+        });
     } else {
         routineContainer.innerHTML = `
             <div class="no-routine-msg">
                 <i class="fas fa-info-circle"></i>
-                <p>TodavÃ­a no tenÃ©s una rutina asignada. ConsultÃ¡ en recepciÃ³n para que te asignen una.</p>
+                <p>Todavía no tenés una rutina asignada. Consultá en recepción para que te asignen una.</p>
             </div>`;
     }
 }
 
-// â”€â”€ Profile Editing â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Profile Editing ───────────────────────────────────────────
 async function showEditProfile() {
     const member = await getMemberByDni(currentMemberDni);
     if (!member) return;
@@ -626,15 +680,15 @@ async function saveProfile() {
     const plan = document.getElementById('profile-plan').value;
     const days = document.getElementById('profile-days').value;
 
-    if (!name) { showProfileMsg('IngresÃ¡ tu nombre.', 'error'); return; }
-    if (!phone) { showProfileMsg('IngresÃ¡ tu telÃ©fono.', 'error'); return; }
+    if (!name) { showProfileMsg('Ingresá tu nombre.', 'error'); return; }
+    if (!phone) { showProfileMsg('Ingresá tu teléfono.', 'error'); return; }
 
     member.name = name;
     member.phone = phone;
     member.plan = plan;
     member.daysPerWeek = days;
 
-    // Auto-update fee for estÃ¡ndar
+    // Auto-update fee for estándar
     if (plan === 'estandar') {
         const opt = PLANS.estandar.options.find(o => String(o.days) === String(days));
         member.fee = opt ? opt.fee : member.fee;
@@ -642,7 +696,7 @@ async function saveProfile() {
     // For personalizado/online, keep existing fee
 
     await updateMember(member);
-    showProfileMsg('Â¡Datos actualizados!', 'success');
+    showProfileMsg('¡Datos actualizados!', 'success');
 
     // Refresh panel display
     setTimeout(async () => {
@@ -657,7 +711,7 @@ function showProfileMsg(msg, type) {
     el.className = `profile-edit-msg ${type}`;
 }
 
-// â”€â”€ Helpers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Helpers ───────────────────────────────────────────────────
 function hideAll() {
     document.getElementById('login-box').style.display = 'none';
     document.getElementById('register-box').style.display = 'none';
