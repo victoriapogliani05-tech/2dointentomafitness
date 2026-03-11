@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M.A. Fitness | Tu Gimnasio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="public-page">
+
+    <!-- ── Navigation Bar ──────────────────────────────────── -->
+    <nav class="public-nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-brand">M.A. <span>FITNESS</span></a>
+            <div class="nav-links">
+                <a href="#hero">Inicio</a>
+                <a href="#about">Nosotros</a>
+                <a href="#plans">Planes</a>
+                <a href="#member-access" class="btn-nav-accent"><i class="fas fa-user"></i> Mi Cuenta</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ── Hero Section ────────────────────────────────────── -->
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <h1>TRANSFORMÁ<br>TU CUERPO</h1>
+            <p>Entrenamiento personalizado, planes a tu medida y el mejor ambiente para alcanzar tus objetivos.</p>
+            <a href="#member-access" class="btn-hero">Acceder a Mi Rutina <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <!-- ── About Section ───────────────────────────────────── -->
+    <section id="about" class="public-section">
+        <div class="section-container">
+            <h2 class="section-title">Sobre <span>Nosotros</span></h2>
+            <p class="section-desc">Más de 10 años formando atletas y ayudando a nuestros socios a alcanzar la mejor
+                versión de sí mismos. Equipamiento de primer nivel, entrenadores certificados y un ambiente que motiva.
+            </p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-dumbbell"></i></div>
+                    <h3>Equipamiento Premium</h3>
+                    <p>Máquinas de última generación y peso libre de calidad profesional.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-user-check"></i></div>
+                    <h3>Rutinas Personalizadas</h3>
+                    <p>Plan de entrenamiento adaptado a tus objetivos y nivel.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-clock"></i></div>
+                    <h3>Amplios Horarios</h3>
+                    <p>Abierto de lunes a sábado, de 7:00 a 22:00 hs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Plans Section ───────────────────────────────────── -->
+    <section id="plans" class="public-section dark-section">
+        <div class="section-container">
+            <h2 class="section-title">Nuestros <span>Planes</span></h2>
+            <div class="plans-grid">
+                <!-- Estándar -->
+                <div class="plan-card">
+                    <div class="plan-header">
+                        <i class="fas fa-dumbbell"></i>
+                        <h3>Estándar</h3>
+                    </div>
+                    <p class="plan-price-from">Desde $32.000<span>/mes</span></p>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> 2 días — $32.000</li>
+                        <li><i class="fas fa-check"></i> 3 días — $36.000</li>
+                        <li><i class="fas fa-check"></i> 4 días — $40.000</li>
+                        <li><i class="fas fa-check"></i> 5 días — $45.000</li>
+                        <li><i class="fas fa-star" style="color:var(--warning)"></i> Pase Libre — $48.000</li>
+                    </ul>
+                </div>
+                <!-- Personalizado -->
+                <div class="plan-card featured">
+                    <div class="plan-badge">Premium</div>
+                    <div class="plan-header">
+                        <i class="fas fa-fire"></i>
+                        <h3>Personalizado</h3>
+                    </div>
+                    <p class="plan-price-from">Consultar<span> monto</span></p>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Rutina 100% a medida</li>
+                        <li><i class="fas fa-check"></i> Seguimiento presencial</li>
+                        <li><i class="fas fa-check"></i> Cuota definida por la profe</li>
+                    </ul>
+                </div>
+                <!-- Online -->
+                <div class="plan-card">
+                    <div class="plan-header">
+                        <i class="fas fa-laptop"></i>
+                        <h3>Online</h3>
+                    </div>
+                    <p class="plan-price-from">Consultar<span> monto</span></p>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Entrenamiento remoto</li>
+                        <li><i class="fas fa-check"></i> Rutina personalizada</li>
+                        <li><i class="fas fa-check"></i> Cuota definida por la profe</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Member Access / Registration Section ────────────── -->
+    <section id="member-access" class="public-section">
+        <div class="section-container">
+            <h2 class="section-title">Acceso <span>Socios</span></h2>
+            <p class="section-desc">Ingresá tu DNI para ver tu rutina, o registrate si sos nuevo.</p>
+
+            <!-- Step 1: DNI Input (Login only) -->
+            <div class="login-box" id="login-box">
+                <div class="login-form">
+                    <div class="login-input-group">
+                        <i class="fas fa-id-card"></i>
+                        <input type="text" id="dni-input" placeholder="Ingresá tu DNI (ej: 30000000)" maxlength="8">
+                    </div>
+                    <button class="btn-primary" id="btn-login"><i class="fas fa-sign-in-alt"></i> Ingresar</button>
+                </div>
+                <p class="login-error" id="login-error"></p>
+                <p class="login-hint">¿Sos nuevo? <a href="#" id="link-register" class="accent-link">Registrate acá</a>
+                </p>
+            </div>
+
+            <!-- Step 2: Registration Form (shown when DNI not found) -->
+            <div class="register-box" id="register-box" style="display:none;">
+                <div class="register-card">
+                    <div class="register-header">
+                        <h3><i class="fas fa-user-plus"></i> Registro de Nuevo Socio</h3>
+                        <p class="text-muted" id="reg-dni-display"></p>
+                    </div>
+
+                    <div class="register-form">
+                        <div class="form-group">
+                            <label><i class="fas fa-id-card"></i> DNI</label>
+                            <input type="text" id="reg-dni" placeholder="Ingresá tu DNI" maxlength="8">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-user"></i> Nombre completo</label>
+                            <input type="text" id="reg-name" placeholder="Ej: María García">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-phone"></i> Número de teléfono</label>
+                            <input type="tel" id="reg-phone" placeholder="Ej: 11-1234-5678">
+                        </div>
+
+                        <div class="form-group">
+                            <label><i class="fas fa-list"></i> Plan</label>
+                            <div class="plan-selector">
+                                <button class="plan-option" data-plan="estandar">
+                                    <i class="fas fa-dumbbell"></i>
+                                    <span>Estándar</span>
+                                </button>
+                                <button class="plan-option" data-plan="personalizado">
+                                    <i class="fas fa-fire"></i>
+                                    <span>Personalizado</span>
+                                </button>
+                                <button class="plan-option" data-plan="online">
+                                    <i class="fas fa-laptop"></i>
+                                    <span>Online</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Days selector (for all plans) -->
+                        <div class="form-group" id="days-group" style="display:none;">
+                            <label><i class="fas fa-calendar-week"></i> Días por semana</label>
+                            <div class="days-selector">
+                                <button class="day-option" data-days="2">2 días</button>
+                                <button class="day-option" data-days="3">3 días</button>
+                                <button class="day-option" data-days="4">4 días</button>
+                                <button class="day-option" data-days="5">5 días</button>
+                                <button class="day-option" data-days="libre">Pase Libre</button>
+                            </div>
+                        </div>
+
+                        <p class="register-error" id="register-error"></p>
+
+                        <div class="register-actions">
+                            <button class="btn-secondary" id="btn-back-login"><i class="fas fa-arrow-left"></i>
+                                Volver</button>
+                            <button class="btn-primary" id="btn-register"><i class="fas fa-check"></i>
+                                Registrarme</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Member Panel (hidden initially) -->
+            <div class="member-panel" id="member-panel" style="display:none;">
+                <div class="panel-header">
+                    <div class="panel-user">
+                        <div class="avatar lg" id="panel-avatar"></div>
+                        <div>
+                            <h2 id="panel-name"></h2>
+                            <p class="text-muted" id="panel-dni-display"></p>
+                        </div>
+                    </div>
+                    <div class="panel-header-actions">
+                        <button class="btn-outline btn-sm" id="btn-edit-profile"><i class="fas fa-edit"></i> Editar
+                            Perfil</button>
+                        <button class="btn-secondary" id="btn-logout"><i class="fas fa-sign-out-alt"></i> Salir</button>
+                    </div>
+                </div>
+
+                <div class="panel-cards">
+                    <div class="panel-card">
+                        <div class="panel-card-icon"><i class="fas fa-credit-card"></i></div>
+                        <h4>Plan Actual</h4>
+                        <p class="panel-card-value" id="panel-plan"></p>
+                    </div>
+                    <div class="panel-card">
+                        <div class="panel-card-icon warning"><i class="fas fa-dollar-sign"></i></div>
+                        <h4>Cuota Mensual</h4>
+                        <p class="panel-card-value" id="panel-fee"></p>
+                    </div>
+                    <div class="panel-card">
+                        <div class="panel-card-icon" id="panel-status-icon"><i class="fas fa-calendar-alt"></i></div>
+                        <h4>Vencimiento</h4>
+                        <p class="panel-card-value" id="panel-due"></p>
+                        <span class="badge" id="panel-status-badge"></span>
+                    </div>
+                </div>
+
+                <!-- Profile Edit Form (hidden by default) -->
+                <div class="profile-edit-section" id="profile-edit-section" style="display:none;">
+                    <h3><i class="fas fa-user-edit"></i> Editar mis datos</h3>
+                    <div class="profile-edit-grid">
+                        <div class="form-group">
+                            <label>Nombre</label>
+                            <input type="text" id="profile-name">
+                        </div>
+                        <div class="form-group">
+                            <label>Teléfono</label>
+                            <input type="text" id="profile-phone">
+                        </div>
+                        <div class="form-group">
+                            <label>Plan</label>
+                            <select id="profile-plan">
+                                <option value="estandar">Estándar</option>
+                                <option value="personalizado">Personalizado</option>
+                                <option value="online">Online</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Días por semana</label>
+                            <select id="profile-days">
+                                <option value="2">2 días</option>
+                                <option value="3">3 días</option>
+                                <option value="4">4 días</option>
+                                <option value="5">5 días</option>
+                                <option value="libre">Pase Libre</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="profile-edit-actions">
+                        <button class="btn-secondary" id="btn-cancel-edit"><i class="fas fa-times"></i>
+                            Cancelar</button>
+                        <button class="btn-primary" id="btn-save-profile"><i class="fas fa-save"></i> Guardar</button>
+                    </div>
+                    <p class="profile-edit-msg" id="profile-edit-msg"></p>
+                </div>
+
+                <div class="panel-routine" id="panel-routine"></div>
+            </div>
+
+            <!-- Registration Success (shown briefly after registering) -->
+            <div class="register-success" id="register-success" style="display:none;">
+                <div class="success-card">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>¡Registro exitoso!</h3>
+                    <p>Ya estás registrado. Accedé a tu panel con tu DNI.</p>
+                    <button class="btn-primary" id="btn-go-panel"><i class="fas fa-arrow-right"></i> Ir a Mi
+                        Panel</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Footer ──────────────────────────────────────────── -->
+    <footer class="public-footer">
+        <div class="footer-inner">
+            <p>© 2026 M.A. Fitness — Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+    <script src="public.js"></script>
+</body>
+
+</html>
